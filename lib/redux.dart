@@ -3,10 +3,9 @@ import 'package:meta/meta.dart';
 class AppState {
   AppState({@required this.counter});
 
-  final int counter;
+  int counter;
 
-  AppState copyWith({int counter}) =>
-      AppState(counter: counter ?? this.counter);
+  AppState copyWith({int counter}) => AppState(counter: counter ?? this.counter);
 
   static AppState get initialState => AppState(counter: 0);
 }
@@ -26,7 +25,9 @@ AppState reducer(AppState state, dynamic action) {
 abstract class ReduxAction {}
 
 class IncrementCounter extends ReduxAction {
-  IncrementCounter({this.amount = 1});
+  IncrementCounter({
+    this.amount = 1,
+  });
 
   final int amount;
 }
