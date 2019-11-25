@@ -1,50 +1,51 @@
 ## Flutter
 
-- Portable UI toolkit
-- Uses widgets for UI composition and layout
-- Compiles to native ARM code
-- Platform independent, currently support for mobile and web
+- An open source cross-platform portable UI toolkit.
+- Compiles to machine code.
+- Custom graphics through with the Skia rendering engine.
 
 ## Dart
-<!--
-Why Dart?
 
-(Check video https://www.youtube.com/watch?v=5F-6n_2XWR8)
-- Hot Reload
-- Many compilers
-  - JIT & AOT
-  - ARM, x86 and JS
-- Familiar syntax
--->
+- General purpose language.
+- Familiar syntax.
+- Allows for Hot Reload.
+- Has many different compilers
+  - Native ARM & x86 (JIT & AOT)
+  - JavaScript
 
 ## Under the Hood
 
-<!--
-- Mobile stack with runner.
-- Web stack with runner.
-- Remember: Dart also compiles to JS!
--->
+- Mobile stack consists of
+  - Your code
+  - Flutter framework in Dart
+  - Engine
+  - Runner (can be switched out for desktop/RPi/etc. runner)
+  - Hardware
+- Web stack works similarly
+- All pure Dart code will still work.
 
 ## Does it work?
 
-<!--
 - Yes!
-- Show examples
-  - https://jfk.dev/
-    - https://twitter.com/jfkdev/status/1164952831469731845
-  - https://hillelcoren.github.io/invoiceninja/#/
-    - https://twitter.com/hillelcoren/status/1194667866412527616
-  - https://flutter-animations-cheat-sheet.codemagic.app/#/
--->
+- Mostly.
 
 ## Limitations
 
-<!--
-- Plugins
--->
+- Still in technical preview.
+- Flutter framework in Dart is fully supported.
+- Performance not as good as on mobile.
+- Pure Dart packages will mostly work.
+- Most plugins aren’t updated yet (but will be soon).
+- Glitches might occur in rendering (workarounds possible).
 
-## Example
+## Progress
+
+- It's all open source!
+- Check out the repo.
 
 # Final Notes & Resources
 
-- *take slides from redux talk*
+- "There's a widget for that!"
+- Official Flutter site.
+- Includes cookbook.
+- Flutter Community GitHub.
