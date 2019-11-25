@@ -1,6 +1,6 @@
-# Talk - Flutter After Hello World
+# Flutter After Hello World
 
-These are the slides of a talk I will give at [GDG DevFest Sofia 2019](https://devfest.bg/schedule/2019-10-05?sessionId=110).
+These are the slides of a talk I gave at [GDG DevFest Sofia 2019](https://devfest.bg/schedule/2019-10-05?sessionId=110).
 
 ## Abstract
 
@@ -9,6 +9,7 @@ What are the next steps? How do you build your app faster? How is state manageme
 In this talk, I go over what to do after your introduction to the Flutter world and give tips and advice on learning to grow your skills for this wonderful framework.
 
 ### Topics
+
 - Flutter
 - IDEs
 - Tooling
@@ -18,9 +19,9 @@ In this talk, I go over what to do after your introduction to the Flutter world 
 - Packages
 - Plugins
 
-
 ## Publications
 
+- [The recording of the talk at GDG DevFest Sofia 2019.](https://youtu.be/oTROluPXoJM)
 - [The official event page for GDG DevFest Sofia 2019.](https://devfest.bg/)
 - [The meetup page for GDG DevFest Sofia 2019.](https://www.meetup.com/GDG-Sofia/events/263421419/)
 
