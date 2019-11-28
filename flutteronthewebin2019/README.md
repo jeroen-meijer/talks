@@ -1,6 +1,6 @@
 # Flutter on the Web in 2019
 
-These are the slides of a talk I will give at [Developer Student Club - TU Delft](https://www.facebook.com/events/3417387578286232/).
+These are the slides of a talk I gave at [Developer Student Club - TU Delft](https://www.facebook.com/events/3417387578286232/).
 
 ## Abstract
 
@@ -21,6 +21,7 @@ In this talk, I take a look at the current state of Flutter running on the web i
 ## Publications
 
 - [The official event page for Developer Student Club - TU Delft.](https://www.facebook.com/events/3417387578286232/)
+- [Tweet of the event by @jfkdev.](https://twitter.com/jfkdev/status/1199797573009264641)
 
 ## Resources
 
