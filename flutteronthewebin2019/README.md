@@ -4,10 +4,10 @@ These are the slides of a talk I gave at [Developer Student Club - TU Delft](htt
 
 ## Abstract
 
-In just a few years, Flutter has made a big impact in the mobile app market.
+In just a few years, Flutter has made a big impact on the mobile app market.
 Big companies have been using Google's framework to build beautiful native mobile experiences.
-However, Flutter wasn't made with just mobile in mind; it runs on all sorts of devices, such as desktops, Raspberry Pi's and even the web.
-In this talk, I take a look at the current state of Flutter running on the web in 2019, including it's ease of use, performance and limitations.
+However, Flutter wasn't made with just mobile in mind; it runs on all sorts of devices, such as desktops, Raspberry Pis, and even the web.
+In this talk, I take a look at the current state of Flutter running on the web in 2019, including its ease of use, performance, and limitations.
 
 ### Topics
 
