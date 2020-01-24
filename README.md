@@ -1,6 +1,6 @@
 # Talks
 
-This repository contains all talks and presentations I've done. Each directory contains a talk's presentation file (.key, along with .pdf) and, if applicable, its source code.
+This repository contains all presentations I've done, including talks and workshops/codelabs. Each directory contains a talk's presentation file (.key, along with .pdf) and, if applicable, its source code.
 
 ## Directory
 
