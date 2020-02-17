@@ -8,15 +8,33 @@ class Contact {
   /// cannot be omitted.
   const Contact({
     @required this.name,
-    @required this.email,
+    this.email,
     this.birthdate,
-    @required this.imageUrl,
+    this.imageUrl,
   });
 
   final String name;
   final String email;
   final DateTime birthdate;
   final String imageUrl;
+
+  /// This is a getter, a calculated property.
+  bool get birthdayIsToday {
+    // If there is no birthdate data, return false.
+    if (birthdate == null) {
+      return false;
+    }
+
+    // Get today's date.
+    final now = DateTime.now();
+
+    // If today's date and the birthdate are equal, then today
+    // is this contact's birthday.
+    return now.month == birthdate.month && now.day == birthdate.day;
+  }
+
+  /// Another getter that provides the current age in years.
+  int get ageInYears => birthdate == null ? null : (birthdate.difference(DateTime.now()).abs().inDays / 365).floor();
 
   /// Overriding the toString method makes debugging easier.
   @override

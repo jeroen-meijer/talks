@@ -17,11 +17,9 @@ final mockContacts = <Contact>[
     name: 'Cassandra',
     email: 'cassandra@example.com',
     birthdate: DateTime(1980, 09, 21),
-    imageUrl: 'https://www.stockphotosecrets.com/wp-content/uploads/2018/11/shutterstock_640005220.jpg',
   ),
   Contact(
     name: 'Lawrence',
-    email: 'flint@example.com',
     birthdate: DateTime(1984, 03, 09),
     imageUrl:
         'https://previews.123rf.com/images/benzoix/benzoix1906/benzoix190600514/125413166-close-up-of-funny-handsome-young-dark-skinned-man-stylish-white-t-shirt-looking-in-camera-with-raise.jpg',
@@ -29,21 +27,14 @@ final mockContacts = <Contact>[
   Contact(
     name: 'Sylvana',
     email: 'sylvana@example.com',
-    birthdate: DateTime(1984, 09, 27),
+    // This contact's birthday is always set to the current date.
+    birthdate: DateTime(1995, DateTime.now().month, DateTime.now().day),
     imageUrl: 'https://image.shutterstock.com/image-photo/young-beautiful-cute-girl-showing-260nw-527343004.jpg',
   ),
   Contact(
     name: 'Miley',
     email: 'miley@example.com',
     birthdate: DateTime(1991, 06, 26),
-    imageUrl:
-        'https://images.pexels.com/photos/1037915/pexels-photo-1037915.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  ),
-  const Contact(
-    name: 'Miley',
-    email: 'miley@example.com',
-    imageUrl:
-        'https://images.pexels.com/photos/1037915/pexels-photo-1037915.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
   ),
   const Contact(
     name: 'Jeremy',
