@@ -20,7 +20,6 @@ In this workshop, I teach programmers how to get started with Flutter and its wo
 ## Publications
 
 - [The official event page for GDG Aalborg's Flutter Study Jam.](https://www.meetup.com/GDG-Aalborg/events/267111573)
-- [Tweet of the event by @jfkdev.](https://twitter.com/jfkdev/status/1199797573009264641)
 
 ## Resources
 
