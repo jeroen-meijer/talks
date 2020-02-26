@@ -17,6 +17,10 @@ In this workshop, I teach programmers how to get started with Flutter and its wo
 - Widgets
 - REST APIs
 
+## Requirements
+
+In order to follow this workshop, please follow [this installation guide](Installation.md).
+
 ## Publications
 
 - [The official event page for GDG Aalborg's Flutter Study Jam.](https://www.meetup.com/GDG-Aalborg/events/267111573)
