@@ -2,6 +2,13 @@
 
 This is the Flutter project that's live coded in the codelab [*Welcome to the Wonderful World of Widgets*]('../).
 
+In order to run it on all platforms, make sure you're on Flutter's `dev` channel. To switch to the `dev` channel, run the following in a terminal:
+
+```bash
+flutter channel dev
+flutter upgrade
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
