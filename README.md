@@ -8,3 +8,4 @@ This repository contains all presentations I've done, including talks and worksh
 - [Flutter After Hello World](flutterafterhelloworld/) - A guide for improving Flutter development workflow and knowledge for beginners.
 - [Flutter on the Web in 2019](flutteronthewebin2019/) - A look at the current state of Flutter running on the web in 2019.
 - [Welcome to the Wonderful World of Widgets](wonderfulworldofwidgets/) - A workshop for getting started with Flutter for absolute beginners.
+- [Less is more - Cross-platform frameworks in 2020](lessismore/) - A look at the ups and downs of building cross-platform applications in 2020.
