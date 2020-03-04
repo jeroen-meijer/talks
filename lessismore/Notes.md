@@ -1,6 +1,15 @@
-## App development
+## Native app development
 
-- Traditional solutions (native)
+- Pros
+  - Great performance
+  - Good developer support
+  - Easy to give native feel to users
+- Cons
+  - Separate teams
+  - Expensive
+  - Lengthy
+  - Feature parity can become difficult
+  - Potential loss of a platform
 
 ## Cross-platform development
 
@@ -13,7 +22,6 @@
 - Cons (depending on the framework)
   - Performance
   - Right tool for the job (it isn't meant for everything)
-  - Scalability
   - Lifespan less certain
     - If it's popular enough, it will be picked up by another party
 
