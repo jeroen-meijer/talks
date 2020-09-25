@@ -3,9 +3,7 @@
   Introducing Redux, Cubits and Blocs.
 </h1>
 
-**_This talk is a work in progress and anything may change significantly in the future._**
-
-These are the slides and code of a talk I am preparing for several speaking conventions and events.
+These are the slides and code of a talk I have given on several occasions.
 
 ## Abstract
 
@@ -26,4 +24,4 @@ In this talk, we'll discuss the advantages of state management patterns that use
 
 ## Publications
 
-- As of yet N/A.
+- [The recording of the livestream given by GDG Nuremberg.](https://youtu.be/5aTWZPuDzu8)
