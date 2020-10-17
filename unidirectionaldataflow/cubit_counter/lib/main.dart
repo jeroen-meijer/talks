@@ -1,6 +1,6 @@
-import 'package:cubit_counter/cubit/counter_cubit.dart';
+// import 'package:cubit_counter/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(CubitCounterExample());
@@ -17,10 +17,7 @@ class CubitCounterExample extends StatelessWidget {
       ),
       // Using the BlocProvider, we make sure any descendents in the widget tree
       // have access to the CounterCubit created in the "create" function.
-      home: BlocProvider(
-        create: (context) => CounterCubit(),
-        child: const HomePage(),
-      ),
+      home: const HomePage(),
     );
   }
 }
@@ -46,20 +43,16 @@ class HomePage extends StatelessWidget {
             //
             // Any time our CounterCubit's state is changed, this part of the
             // tree rebuilds, and nothing else.
-            BlocBuilder<CounterCubit, CounterState>(
-              builder: (context, state) {
-                return Text(
-                  '${state.counter}',
-                  style: Theme.of(context).textTheme.headline4,
-                );
-              },
+            Text(
+              '...',
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.bloc<CounterCubit>().increment();
+          // ...
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
