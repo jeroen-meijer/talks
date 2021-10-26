@@ -34,8 +34,12 @@ class ContactInfo extends StatelessWidget {
               child: Text(
                 // Takes the first letter of every word in their name, joins them and
                 // makes it uppercase.
-                contact.name.split(' ').map((name) => name[0]).join().toUpperCase(),
-                style: TextStyle(color: Colors.white),
+                contact.name
+                    .split(' ')
+                    .map((name) => name[0])
+                    .join()
+                    .toUpperCase(),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
       // We want to display multiple items next to each other.
@@ -56,7 +60,7 @@ class ContactInfo extends StatelessWidget {
           if (contact.birthdayIsToday)
             // 'Icons' is a collection of Material themed icons provided by the
             // 'flutter:material' package.
-            Icon(Icons.cake)
+            const Icon(Icons.cake)
         ],
       ),
       // If the email address is null or empty, don't display it.

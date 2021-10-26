@@ -31,7 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (BuildContext context, int counterValue) {
                 return new Text(
                   '$counterValue',
-                  style: Theme.of(context).textTheme.display1.copyWith(fontSize: 70.0),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(fontSize: 70.0),
                 );
               },
             ),
@@ -40,33 +43,29 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (BuildContext context, Store store) {
                 return Column(
                   children: <Widget>[
-                    FlatButton(
-                      child: Text('Add 1'),
-                      color: Colors.blue,
+                    TextButton(
                       onPressed: () {
                         store.dispatch(IncrementCounter());
                       },
+                      child: Text('Add 1'),
                     ),
-                    FlatButton(
-                      child: Text('Add 5'),
-                      color: Colors.green,
+                    TextButton(
                       onPressed: () {
                         store.dispatch(IncrementCounter(amount: 5));
                       },
+                      child: Text('Add 5'),
                     ),
-                    FlatButton(
-                      child: Text('Subtract 10'),
-                      color: Colors.deepOrange,
+                    TextButton(
                       onPressed: () {
                         store.dispatch(IncrementCounter(amount: -10));
                       },
+                      child: Text('Subtract 10'),
                     ),
-                    FlatButton(
-                      child: Text('Reset'),
-                      color: Colors.grey,
+                    TextButton(
                       onPressed: () {
                         store.dispatch(Init());
                       },
+                      child: Text('Reset'),
                     ),
                   ],
                 );

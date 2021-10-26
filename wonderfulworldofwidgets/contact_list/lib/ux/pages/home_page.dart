@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                 // horizontally.
                 textAlign: TextAlign.center,
                 // Let's add some styling.
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.red,
                 ),
               ),
