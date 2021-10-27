@@ -1,0 +1,14 @@
+name: calculator
+description: A calculator package demonstrating various testing methods.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+
+dependencies:
+  rxdart: ^0.27.2
+
+dev_dependencies:
+  test: ">=1.17.0 <1.18.0"
+  very_good_analysis: ^2.3.0

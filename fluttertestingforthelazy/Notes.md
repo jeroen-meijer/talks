@@ -1,5 +1,5 @@
 <!--
-Notes for my talk "Testing in Flutter and Dart (for the lazy)"
+Notes for my talk 'Testing in Flutter and Dart (for the lazy)'
 
 This document describes the multiple sections I want to cover in my talk.
 Mainly the what, why and how of testing in Flutter and Dart.
@@ -52,14 +52,6 @@ Mainly the what, why and how of testing in Flutter and Dart.
 - There are multiple types of tests and different ways to test.
 - There are a bunch of metrics to measure how well your code and tests work.
 - In general, it's a good idea to test for output, not implementation.
-- At VGV, we aim for 100% code coverage on every project.
-- Coverage, in our opinion, is a good way to measure the breadth of how much of your code is tested.
-  - It doesn't mean all your code is tested.
-  - It doesn't even mean any of your code is tested.
-  - It means your code has executed.
-  - You can write testing code that executes your entire application, but never actually assert anything.
-  - However, if a particular line or method has never been run, you know for sure it can't have been tested.
-  - 100% code coverage isn't the goal of how we write tests -- it's the outcome of writing tests for every path and codebranch in our application. That's why we use it as a metric.
 - I will go over multiple aspects and methods of testing in this talk.
 
 # In practice
@@ -90,8 +82,8 @@ Let's go over some common terminology first
 - Groups in Dart testing allow you to group a set of tests under a common name.
 - They help conceptually separate tests for different parts of your code.
 - Common uses for groups are grouping tests for a specific class, method or scenario.
-  - Think of a group called "Calculator" that contains tests for the Calculator class.
-  - You can have another group inside called "add method" that contains tests for the add method.
+  - Think of a group called 'Calculator' that contains tests for the Calculator class.
+  - You can have another group inside called 'add method' that contains tests for the add method.
   - If you have multiple errors when giving the add method the wrong arguments, you can group them under the same group as well.
 - Groups in Dart have a special property -- when a test is run, the names of the groups and the test being run are joined together.
   - We use this to your advantage and write the tests in a way that makes it easy to find the failing test, by giving it a clear description.
@@ -120,10 +112,18 @@ Let's go over some common terminology first
 - The most common matcher is the `equals` matcher, which asserts that the first argument is equal to the second.
 - Their goal is to perform some assertion on a value and, if it fails, to provide a helpful error message.
 - There are a lot of inlcuded matchers, and you can write your own
-- _Show various useful matchers on screen, including: equals, isTrue, isFalse, isNull, contains("world"), emitsInOrder([1, 2, 3])_
+- _Show various useful matchers on screen, including: equals, isTrue, isFalse, isNull, contains('world'), emitsInOrder([1, 2, 3])_
 - Matchers can be cleverer than they seem.
   - The `equals` matcher will check for string equality and give special errors if they are different, but it will also properly match lists and maps, for example. _Show example._
-  - The `contains` matcher works on strings (`expect("Hello world", contains("world"))`) but also lists (`expect([1, 2, 3], contains(2))`) and other iterables.
+  - The `contains` matcher works on strings (`expect('Hello world', contains('world'))`) but also lists (`expect([1, 2, 3], contains(2))`) and other iterables.
+
+### WidgetTester
+
+- A mechanism to run tests on widgets.
+- Can create a widget tree and allows you to programmatically interact with it.
+- Most common method is `tester.pumpWidget(widget)`
+- "Pumping" means rendering a frame of the widget tree.
+- Will be explained in more detail in the next section.
 
 ## Types of tests
 
@@ -133,19 +133,61 @@ Let's go over some common terminology first
 - Perform logic, check the output.
 - For example
   - Think of a calculator. You can test it by adding, subtracting, multiplying and dividing.
-  - A backend class, like a repository, that depends on some API. You can test it by mocking out the API and making sure the repository provides the right data when calling "getUser".
+  - A backend class, like a repository, that depends on some API. You can test it by mocking out the API and making sure the repository provides the right data when calling 'getUser'.
   - Or, a repository that handles errors the right way, when the API returns an error or some malformed data.
 
 ```dart
-group("Calculator", () {
-  group("add method", () {
-    test("adds two numbers correctly", () {
-      final calculator = Calculator();
+group('Calculator', () {
+  // Regular example
+  group('add method', () {
+    test('adds given value to current value', () {
+      final instance = Calculator()..add(2);
 
-      expect(calculator.add(5, 3), equals(8));
+      expect(instance.currentValue, equals(2));
     });
+  });
+
+  // Error example
+  group('divide method', () {
+    test('throws ArgumentError when divisor is 0', () {
+      final instance = Calculator();
+
+      expect(() => instance.divide(0), throwsArgumentError);
+    });
+  });
+
+  // Stream example
+  test('history returns stream of updated history values', () {
+    final instance = Calculator();
+
+    expect(
+      instance.history,
+      emitsInOrder(<List<double>>[
+        [0],
+        [0, 1],
+        [0, 1, 2],
+        [0, 1, 2, 3],
+      ]),
+    );
+
+    instance
+      ..add(1)
+      ..add(1)
+      ..add(1);
   });
 });
 ```
 
-<!-- TODO: Add more -->
+# Widget tests
+
+- Simple way to test widgets.
+- Not image comparison, but unit tests for widgets.
+- Build a widget, perform some logic, check the widget tree or some output.
+- For example
+  - Show a home page and make sure that it displays the right text.
+  - Assert that the sign in button performs the right action when pressed.
+  - Display a list of cars and make sure the user navigates to the right page when a car is tapped.
+
+```dart
+
+```
