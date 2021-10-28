@@ -88,16 +88,6 @@ Let's go over some common terminology first
 - Groups in Dart have a special property -- when a test is run, the names of the groups and the test being run are joined together.
   - We use this to your advantage and write the tests in a way that makes it easy to find the failing test, by giving it a clear description.
 
-### Mocks
-
-- Extremely powerful tool in testing.
-- When testing, you want to only test the particular thing the test is about.
-- It should be separated from the rest of the code, and shouldn't have any external dependencies.
-- Mocks are a way to create fake, static external dependencies.
-- Allows you to consistently test code in a specific scenario.
-  - If your backend class has a dependency on an external library, you can mock it out.
-  - If your widget depends on some provider, you can mock the provider and its value.
-
 ### `expect`
 
 - `expect` is a function that matches its first argument to the second argument.
@@ -117,6 +107,16 @@ Let's go over some common terminology first
   - The `equals` matcher will check for string equality and give special errors if they are different, but it will also properly match lists and maps, for example. _Show example._
   - The `contains` matcher works on strings (`expect('Hello world', contains('world'))`) but also lists (`expect([1, 2, 3], contains(2))`) and other iterables.
 
+### WidgetTester
+
+- A mechanism to run tests on widgets.
+- Can create a widget tree and allows you to programmatically interact with it.
+- Most common method is `tester.pumpWidget(widget)`
+- "Pumping" means rendering a frame of the widget tree.
+- Will be explained in more detail in the next section.
+- You can also retrieve an instance of a widget and do assertions on it.
+  - `tester.widget(find.byType(MaterialApp))`
+
 ### Finders
 
 - Finders are a way to find widgets in the widget tree.
@@ -127,15 +127,15 @@ Let's go over some common terminology first
   - `find.byIcon(Icons.alarm)`
   - `find.descendant(of: myListTile, matching: myTitle)`
 
-### WidgetTester
+### Mocks
 
-- A mechanism to run tests on widgets.
-- Can create a widget tree and allows you to programmatically interact with it.
-- Most common method is `tester.pumpWidget(widget)`
-- "Pumping" means rendering a frame of the widget tree.
-- Will be explained in more detail in the next section.
-- You can also retrieve an instance of a widget and do assertions on it.
-  - `tester.widget(find.byType(MaterialApp))`
+- Extremely powerful tool in testing.
+- When testing, you want to only test the particular thing the test is about.
+- It should be separated from the rest of the code, and shouldn't have any external dependencies.
+- Mocks are a way to create fake, static external dependencies.
+- Allows you to consistently test code in a specific scenario.
+  - If your backend class has a dependency on an external library, you can mock it out.
+  - If your widget depends on some provider, you can mock the provider and its value.
 
 ### Code Coverage
 
