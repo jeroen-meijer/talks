@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:rental/backend/backend.dart';
 import 'package:rental/car_overview/car_overview.dart';
@@ -18,12 +19,13 @@ class App extends StatelessWidget {
     return ChangeNotifierProvider.value(
       value: _rentalService,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Rental',
         theme: ThemeData(
-          primarySwatch: Colors.orange,
+          primarySwatch: Colors.red,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: CarOverviewPage(),
+        home: const CarOverviewPage(),
       ),
     );
   }
