@@ -37,8 +37,11 @@ void main() {
     Widget buildSubject() {
       return ChangeNotifierProvider.value(
         value: rentalService,
-        child: const MaterialApp(
-          home: CarOverviewPage(),
+        child: MaterialApp(
+          home: MockNavigatorProvider(
+            navigator: navigator,
+            child: const CarOverviewPage(),
+          ),
         ),
       );
     }
@@ -87,7 +90,7 @@ void main() {
 
           await tester.tap(find.byType(CarListTile));
 
-          verify(() => navigator.push(any()));
+          verify(() => navigator.push(any())).called(1);
         });
       },
     );

@@ -1,6 +1,18 @@
-# rental
+# Car Rental Example
 
-A new Flutter project.
+A Flutter app demonstrating how to write widget tests.
+
+To run the app, run the following command from the root of the project:
+
+```shell
+flutter run
+```
+
+To run the tests, run the following command from the root of the project:
+
+```shell
+flutter test
+```
 
 ## Getting Started
 

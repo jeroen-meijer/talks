@@ -117,6 +117,16 @@ Let's go over some common terminology first
   - The `equals` matcher will check for string equality and give special errors if they are different, but it will also properly match lists and maps, for example. _Show example._
   - The `contains` matcher works on strings (`expect('Hello world', contains('world'))`) but also lists (`expect([1, 2, 3], contains(2))`) and other iterables.
 
+### Finders
+
+- Finders are a way to find widgets in the widget tree.
+- Many different finders for various situations.
+- There are matchers that can be used with finders.
+  - `find.byType(MaterialApp)`
+  - `find.text('Home')`
+  - `find.byIcon(Icons.alarm)`
+  - `find.descendant(of: myListTile, matching: myTitle)`
+
 ### WidgetTester
 
 - A mechanism to run tests on widgets.
@@ -124,6 +134,21 @@ Let's go over some common terminology first
 - Most common method is `tester.pumpWidget(widget)`
 - "Pumping" means rendering a frame of the widget tree.
 - Will be explained in more detail in the next section.
+- You can also retrieve an instance of a widget and do assertions on it.
+  - `tester.widget(find.byType(MaterialApp))`
+
+### Code Coverage
+
+- A metric of how much code has been executed during tests.
+- Not unique to Dart, but a very useful tool for testing.
+- At VGV, we aim for 100% code coverage on every project.
+- Coverage, in our opinion, is a good way to measure the breadth of how much of your code is tested.
+  - It doesn't mean all your code is tested.
+  - It doesn't even mean any of your code is tested.
+  - It means your code has executed.
+  - You can write testing code that executes your entire application, but never actually assert anything.
+  - However, if a particular line or method has never been run, you know for sure it can't have been tested.
+  - 100% code coverage isn't the goal of how we write tests -- it's the outcome of writing tests for every path and codebranch in our application. That's why we use it as a metric.
 
 ## Types of tests
 
@@ -189,5 +214,33 @@ group('Calculator', () {
   - Display a list of cars and make sure the user navigates to the right page when a car is tapped.
 
 ```dart
+testWidgets(
+  'renders empty text '
+  'when no cars are available',
+  (tester) async {
+    when(() => rentalService.cars).thenReturn([]);
+    await tester.pumpWidget(buildSubject());
 
+    expect(find.text('No cars available'), findsOneWidget);
+  },
+);
+
+testWidgets(
+  'navigates to CarDetailsPage '
+  'when a car is tapped',
+  (tester) async {
+    await mockNetworkImages(() async {
+      await tester.pumpWidget(buildSubject());
+
+      await tester.tap(find.byType(CarListTile));
+
+      verify(() => navigator.push(any()));
+    });
+  },
+);
 ```
+
+## Other kinds
+
+- You can do integration tests, that test the interaction between your app and an external system.
+- You can do golden tests, that compare the output of your app to a golden image file.
