@@ -10,4 +10,4 @@ This repository contains all presentations I've done, including talks and worksh
 - [Welcome to the Wonderful World of Widgets](wonderfulworldofwidgets/) - A workshop for getting started with Flutter for absolute beginners.
 - [Less is more - Cross-platform frameworks in 2020](lessismore/) - A look at the ups and downs of building cross-platform applications in 2020.
 - [Unidirectional Data Flow Rocks!](unidirectionaldataflow/) - An interactive look into the design and advantages of state managemet patterns that use unidirectional data flow like Redux and Bloc.
-
+- [Testing in Flutter and Dart (for the lazy)](fluttertestingforthelazy/) - A quick-fire introduction on why and how to test Flutter and Dart applications.
