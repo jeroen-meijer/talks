@@ -48,7 +48,7 @@ This talk will cover various topics that give you and your team the knowledge an
   - Use of pre-existing components
   - Consistent use of components, and using them what they're meant for
 
-#### Custom component library
+#### Custom UI Library
 
 On the designer's side:
 
@@ -71,31 +71,32 @@ On the developer's side:
 - Use the fact you have access to the exact measurements, colors and fonts to create pixel-perfect components according to the design specs.
 - Use Flutter's `ThemeData` and `BuildContext` system to your advantage. It's there for a reason. Specifically;
 - To implement these widgets, try the following:
+
   - Simply use a theme to set colors and fonts.
+
     - You can of course achieve a lot by setting a primary color and a font family.
     - Set colors for different parts by using the `colorScheme` property, such as a `secondary` color, a `surface` color, and an `onSurface` color.
     - Set certain elevation values and corner radii for different parts by using the `elevation` and `shape` properties.
     - Create a custom theme class that only contains values that are important for your app, then generate a `ThemeData` object from it.
       - This also allows you to easily define multiple themes and even allow users to define custom themes according to your specs.
-- If that doesn't work, create a custom widget composed of other widgets.
-  - Continue to use Flutter's `ThemeData` as much as possible for the best compatibility and future-proofing.
-  - Use your custom theme class to set the general properties for these components.
-    - This allows for more consistent components (by keeping the code DRY) and easier editing of the theme both ahead of time and while the app is running.
-    - This also still allows for custom themes by users and, indeed, the app itself.
-- If all these don't meet your needs, you can always build a custom widget from scratch.
-  - This is not recommended, but it's always an option.
-  - Still use Flutter's `ThemeData` class and your own theme class as much as possible.
-  - Make sure your widgets are performant and don't cause unnecessary rebuilds.
+
+  - If that doesn't work, create a custom widget composed of other widgets.
+
+    - Continue to use Flutter's `ThemeData` as much as possible for the best compatibility and future-proofing.
+    - Use your custom theme class to set the general properties for these components.
+      - This allows for more consistent components (by keeping the code DRY) and easier editing of the theme both ahead of time and while the app is running.
+      - This also still allows for custom themes by users and, indeed, the app itself.
+
+  - If all these don't meet your needs, you can always build a custom widget from scratch.
+    - This is not recommended, but it's always an option.
+    - Still use Flutter's `ThemeData` class and your own theme class as much as possible.
+    - Make sure your widgets are performant and don't cause unnecessary rebuilds.
+
 - Pro-tip: when defining arguments for your widget that are related to visual information and content (such as text and icons), always use the Widget class instead of Strings and IconData.
   - This allows for your widget to be used in many more ways, such as with custom icons and text widgets.
   - There are little to no downsides to doing this.
   - It avoids the need to refactor the widget later if you need to add more functionality to it.
   - It also avoids parameter hell, where you have to pass a lot of parameters to a widget that are all related to the same thing and could be achieved by simply providing a single widget.
-
-#### Custom icons
-
-- Make a custom icon font or use a package and add your own SVGs.
-- This is a good idea for the same reasons as a custom component library.
 
 #### Text Styling
 
@@ -121,6 +122,7 @@ On the developer's side:
 - This allows the devs to use existing classes that are already supported throughout the framework.
 - All of Flutter's built-in widgets will comply with these text styles, completely for free!
 
+<!--
 #### Colors
 
 - Designers generally already use a pre-defined set of colors.
@@ -137,6 +139,7 @@ On the developer's side:
   - Then, depending on the currently selected theme, generate a color scheme using these colors.
     - For example, if your app colorizes particular header texts, define a `header` color in your custom color class.
     - Set that color's value depending on the currently selected theme (for example, `header: AppColors.green` in a green light mode theme).
+-->
 
 #### UI Gallery
 
@@ -169,10 +172,20 @@ On the developer's side:
 
 ### State Management
 
+Why?
+
+- Apps, over their lifetime, will naturally grow in requirements and complexity.
+- This means that, over time, you will need to add more features and refactor existing ones.
+- When this happens, managing the data that is used, displayed, and manipulated by your app becomes more and more important.
+- "State management" describes the process of managing this data.
+
+How?
+
 - State management is a hot topic in the Flutter community.
 - There are many different solutions, and it's hard to choose the right one for your project.
 - There is no one-size-fits-all solution, but there are some guidelines that can help you make the right choice.
 - To find what's right for you, keep in mind:
+
   - Familiarity: what are you and your team familiar with? This will help you get up to speed quickly.
   - Simplicity: what is the simplest solution that will work for your project? Don't overcomplicate things.
   - Scalability: will this solution work for your project in the long run? Will it be easy to add new features and refactor existing ones?
@@ -180,6 +193,7 @@ On the developer's side:
   - Testability: will this solution be easy to test? Will it be easy to write unit tests for your business logic?
   - Community: is this solution well-known and well-supported? Will you be able to find help when you need it?
   - Documentation: is this solution well-documented? Will you be able to find the information you need when you need it?
+
 - Some solutions that are popular are Provider, Bloc, MobX, and Riverpod.
 - Keep in mind that, if a simple ChangeNotifier is enough for your project, you don't need to use a more complex solution.
 - At Bloom, we use Blocs in combinations with Providers and a repository pattern.
