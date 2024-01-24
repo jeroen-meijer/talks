@@ -1,11 +1,11 @@
 name: rental
 description: A Flutter app demonstrating how to write widget tests.
-publish_to: "none"
+publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=3.2.3 <4.0.0'
 
 dependencies:
   equatable: ^2.0.3

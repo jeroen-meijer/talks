@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(CubitCounterExample());
+  runApp(const CubitCounterExample());
 }
 
 class CubitCounterExample extends StatelessWidget {
+  const CubitCounterExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +17,7 @@ class CubitCounterExample extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // Using the BlocProvider, we make sure any descendents in the widget tree
+      // Using the BlocProvider, we make sure any descendants in the widget tree
       // have access to the CounterCubit created in the "create" function.
       home: const HomePage(),
     );
@@ -23,7 +25,7 @@ class CubitCounterExample extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class HomePage extends StatelessWidget {
             // tree rebuilds, and nothing else.
             Text(
               '...',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

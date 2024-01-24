@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(CubitCounterExample());
+  runApp(const CubitCounterExample());
 }
 
 class CubitCounterExample extends StatelessWidget {
+  const CubitCounterExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,7 +28,7 @@ class CubitCounterExample extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
               builder: (context, state) {
                 return Text(
                   '${state.counter}',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
             ),
@@ -59,7 +61,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.bloc<CounterCubit>().increment();
+          context.read<CounterCubit>().increment();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

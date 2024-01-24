@@ -14,7 +14,7 @@ description: A demo Flutter project showing contacts.
 version: 0.0.1+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=3.2.3 <4.0.0'
 
 dependencies:
   # The following adds the Cupertino Icons font to your application.
