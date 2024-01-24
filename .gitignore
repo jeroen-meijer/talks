@@ -1,2 +1,5 @@
 **/.DS_Store
-wonderfulworldofwidgets/contact_list/.vscode/launch.json
+**/.vscode/launch.json
+# https://dart.dev/guides/libraries/private-files
+# Created by `dart pub`
+.dart_tool/
